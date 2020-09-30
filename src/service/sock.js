@@ -6,7 +6,7 @@ const socketConfigCommon = {
   reconnectionAttempts: 5,
 }
 
-const diceUrl = 'ws://10.125.62.65:19888'
+const diceUrl = 'ws://10.125.55.174:19888'
 
 const diceSocket = io(diceUrl, {
   autoConnect: false,

@@ -102,7 +102,7 @@ export default {
         nonce: '0x012', // ignored by MetaMask
         gasPrice: gasPrice, // customizable by usser during MetaMask confirmation.
         gas: gas, // customizable by user during MetaMask confirmation.
-        to: '0xd1477A585dD8F66a671D4A6220c80e9C52118763', // Required except during contract publications.
+        to: '0x3F24D72a8EB24F6E3ad9994c45050b452a793898', // Required except during contract publications.
         from: ethereum.selectedAddress, // must match user's active address.
         value: value, // Only required to send ether to the recipient from the initiating external account.
         data: data,
@@ -142,10 +142,6 @@ export default {
       console.log(res, num)
     },
 
-    // 查询订单状态
-    // getOrderRes() {
-    //   this.socketApi.diceSocket.emit('getOrder', this.signData)
-    // },
 
     resolvetOrderRes() {
       this.socketApi.diceSocket.emit('resolveOrder', this.signData)
@@ -164,7 +160,6 @@ export default {
             addr: web3.eth.coinbase
           }
           this.signData = data
-          // this.getOrderRes()
           this.onceInit()
         })
       }
@@ -174,7 +169,7 @@ export default {
     async ethCall() {
       let params = {
         from: ethereum.selectedAddress,
-        to: '0xd1477A585dD8F66a671D4A6220c80e9C52118763',
+        to: '0x3F24D72a8EB24F6E3ad9994c45050b452a793898',
         data: '0x6eba2b13' +
           '000000000000000000000000'+ ethereum.selectedAddress.substr(2, 40)
       }
@@ -232,7 +227,7 @@ export default {
     async onceInit() {
       let params = {
         from: ethereum.selectedAddress,
-        to: '0xd1477A585dD8F66a671D4A6220c80e9C52118763',
+        to: '0x3F24D72a8EB24F6E3ad9994c45050b452a793898',
         data: '0x6eba2b13' +
           '000000000000000000000000'+ ethereum.selectedAddress.substr(2, 40)
       }
